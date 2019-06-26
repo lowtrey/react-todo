@@ -5,9 +5,15 @@ import React from 'react';
 // form is submitted, a new Todo component should be created.
 
 class NewTodoForm extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {};
+    }
     render() {
         return (
-            <h3>Todo Form Here</h3>
+            <div>
+                <h3>Todo Form Here</h3>
+            </div>
         )
     }
 }

@@ -8,6 +8,10 @@ import Todo from './Todo';
 // component.
 
 class TodoList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {todos: []};
+    }
     render() {
         return (
             <div>

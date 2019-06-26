@@ -6,7 +6,6 @@ import React from 'react';
 // be a button with the text “X” that when clicked, 
 // removes the todo.
 
-
 class Todo extends React.Component {
     render() {
         return (
