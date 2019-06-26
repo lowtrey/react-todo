@@ -1,4 +1,5 @@
 import React from 'react';
+import uuid from 'uuid/v4';
 
 // NewTodoForm - this component should render a form with 
 // one text input for the task to be created. When this 
@@ -9,11 +10,18 @@ class NewTodoForm extends React.Component {
         super(props);
         this.state = {task: ''};
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(evt) {
         this.setState({
             [evt.target.name]: evt.target.value
         });
+    }
+    handleSubmit(evt) {
+        evt.preventDefault();
+        let newTodo = {...this.state, id: uuid()};
+        this.props.addTask(newTodo);
+        this.setState({task: ''});
     }
     render() {
         return (

@@ -11,21 +11,27 @@ class TodoList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {todos: [
-            {task: 'Wake Up'},
-            {task: 'Do Shit'},
-            {task: 'Eat Sustinence'},
-            {task: 'Go to Sleep'}
+            {task: 'Wake Up', id: 1},
+            {task: 'Eat Sustinence', id: 2},
+            {task: 'Do Shit', id: 3},
+            {task: 'Go to Sleep', id: 4}
         ]};
+        this.addTask = this.addTask.bind(this);
+    }
+    addTask(newTask) {
+        this.setState({
+            todos: [...this.state.todos, newTask]
+        });
     }
     render() {
         const todoList = this.state.todos.map(todo => (
-        <Todo task={todo.task} />
+        <Todo key={todo.id} task={todo.task} />
         ));
         return (
             <div>
                 <h2>Todo List</h2>
                 {todoList}
-                <NewTodoForm />
+                <NewTodoForm addTask={this.addTask} />
             </div>
         )
     }
