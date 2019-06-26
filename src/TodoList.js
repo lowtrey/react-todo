@@ -10,14 +10,22 @@ import Todo from './Todo';
 class TodoList extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {todos: []};
+        this.state = {todos: [
+            {task: 'Wake Up'},
+            {task: 'Do Shit'},
+            {task: 'Eat Sustinence'},
+            {task: 'Go to Sleep'}
+        ]};
     }
     render() {
+        const todoList = this.state.todos.map(todo => (
+        <Todo task={todo.task} />
+        ));
         return (
             <div>
                 <h2>Todo List</h2>
+                {todoList}
                 <NewTodoForm />
-                <Todo />
             </div>
         )
     }

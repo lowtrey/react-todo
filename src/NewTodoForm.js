@@ -7,7 +7,7 @@ import React from 'react';
 class NewTodoForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {todo: ''};
+        this.state = {task: ''};
         this.handleChange = this.handleChange.bind(this);
     }
     handleChange(evt) {
@@ -17,11 +17,11 @@ class NewTodoForm extends React.Component {
     }
     render() {
         return (
-            <form>
+            <form onSubmit={this.handleSubmit}>
                 <input
                     type='text'
-                    name='todo'
-                    value={this.state.todo}
+                    name='task'
+                    value={this.state.task}
                     placeholder='New Todo...'
                     onChange={this.handleChange}
                 >
