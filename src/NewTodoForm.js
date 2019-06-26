@@ -7,13 +7,27 @@ import React from 'react';
 class NewTodoForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {todo: ''};
+        this.handleChange = this.handleChange.bind(this);
+    }
+    handleChange(evt) {
+        this.setState({
+            [evt.target.name]: evt.target.value
+        });
     }
     render() {
         return (
-            <div>
-                <h3>Todo Form Here</h3>
-            </div>
+            <form>
+                <input
+                    type='text'
+                    name='todo'
+                    value={this.state.todo}
+                    placeholder='New Todo...'
+                    onChange={this.handleChange}
+                >
+                </input>
+                <button>+</button>
+            </form>
         )
     }
 }
