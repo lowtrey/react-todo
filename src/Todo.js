@@ -1,4 +1,5 @@
 import React from 'react';
+import './Todo.css';
 
 // Todo- this component should display a div with 
 // the task of the todo.
@@ -17,6 +18,7 @@ class Todo extends React.Component {
         this.toggleForm = this.toggleForm.bind(this);
         this.handleChange = this.handleChange.bind(this);
         this.handleUpdate = this.handleUpdate.bind(this);
+        this.handleToggle = this.handleToggle.bind(this);
     }
     handleRemove() {
         this.props.remove(this.props.id);
@@ -34,6 +36,9 @@ class Todo extends React.Component {
         this.setState({
             [evt.target.name]: evt.target.value
         });
+    }
+    handleToggle(evt) {
+        this.props.toggleTodo(this.props.id);
     }
     render() {
         let result;
@@ -54,7 +59,10 @@ class Todo extends React.Component {
         } else {
             result = (
                 <div>
-                    <li>
+                    <li 
+                        className={this.props.completed ? 'completed' : ''}
+                        onClick={this.handleToggle}
+                    >
                         {this.props.task} 
                         <button onClick={this.toggleForm}>Edit</button>
                         <button 

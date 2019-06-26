@@ -19,7 +19,7 @@ class NewTodoForm extends React.Component {
     }
     handleSubmit(evt) {
         evt.preventDefault();
-        let newTodo = {...this.state, id: uuid()};
+        let newTodo = {...this.state, id: uuid(), completed: false};
         this.props.addTask(newTodo);
         this.setState({task: ''});
     }
