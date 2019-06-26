@@ -7,6 +7,13 @@ import React from 'react';
 // removes the todo.
 
 class Todo extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleRemove = this.handleRemove.bind(this);
+    }
+    handleRemove() {
+        this.props.remove(this.props.id);
+    }
     render() {
         return (
             <div>
@@ -14,7 +21,7 @@ class Todo extends React.Component {
                     {this.props.task} 
                     <button>Edit</button>
                     <button 
-                        onClick={this.props.delete}>X
+                        onClick={this.handleRemove}>X
                     </button>
                 </li>
             </div>

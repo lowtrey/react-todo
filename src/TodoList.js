@@ -17,18 +17,17 @@ class TodoList extends React.Component {
             {task: 'Go to Sleep', id: 4}
         ]};
         this.addTask = this.addTask.bind(this);
-        this.delete = this.delete.bind(this);
+        this.remove = this.remove.bind(this);
     }
     addTask(newTodo) {
         this.setState({
             todos: [...this.state.todos, newTodo]
         });
     }
-    delete(id) {
+    remove(id) {
         this.setState({
             todos: this.state.todos.filter(todo => todo.id !== id)
         });
-        
     }
     render() {
         const todos = this.state.todos.map(todo => (
@@ -36,7 +35,7 @@ class TodoList extends React.Component {
                 key={todo.id} 
                 id={todo.id} 
                 task={todo.task} 
-                delete={() => this.delete(todo.id)} 
+                remove={this.remove} 
             />
         ));
         return (
