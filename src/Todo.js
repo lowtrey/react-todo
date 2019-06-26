@@ -10,12 +10,13 @@ class Todo extends React.Component {
     render() {
         return (
             <div>
-                <h6>
+                <li>
                     {this.props.task} 
+                    <button>Edit</button>
                     <button 
                         onClick={this.props.delete}>X
                     </button>
-                </h6>
+                </li>
             </div>
         )
     }

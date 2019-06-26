@@ -19,9 +19,9 @@ class TodoList extends React.Component {
         this.addTask = this.addTask.bind(this);
         this.delete = this.delete.bind(this);
     }
-    addTask(newTask) {
+    addTask(newTodo) {
         this.setState({
-            todos: [...this.state.todos, newTask]
+            todos: [...this.state.todos, newTodo]
         });
     }
     delete(id) {
@@ -31,7 +31,7 @@ class TodoList extends React.Component {
         
     }
     render() {
-        const todoList = this.state.todos.map(todo => (
+        const todos = this.state.todos.map(todo => (
             <Todo
                 key={todo.id} 
                 id={todo.id} 
@@ -42,7 +42,7 @@ class TodoList extends React.Component {
         return (
             <div>
                 <h2>Todo List</h2>
-                {todoList}
+                <ul>{todos}</ul>
                 <NewTodoForm addTask={this.addTask} />
             </div>
         )

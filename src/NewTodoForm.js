@@ -32,8 +32,7 @@ class NewTodoForm extends React.Component {
                     value={this.state.task}
                     placeholder='New Todo...'
                     onChange={this.handleChange}
-                >
-                </input>
+                />
                 <button>+</button>
             </form>
         )
