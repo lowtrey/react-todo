@@ -1,5 +1,6 @@
 import React from 'react';
 import uuid from 'uuid/v4';
+import './NewTodoForm.css';
 
 // NewTodoForm - this component should render a form with 
 // one text input for the task to be created. When this 
@@ -25,7 +26,7 @@ class NewTodoForm extends React.Component {
     }
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className='NewTodoForm' onSubmit={this.handleSubmit}>
                 <input
                     type='text'
                     name='task'
@@ -33,7 +34,7 @@ class NewTodoForm extends React.Component {
                     placeholder='New Todo...'
                     onChange={this.handleChange}
                 />
-                <button>+</button>
+                <button><i class='fas fa-plus-circle fa-3x'></i></button>
             </form>
         )
     }

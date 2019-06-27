@@ -45,7 +45,7 @@ class Todo extends React.Component {
         if(this.state.isEditing){
             result = (
                 <div className='Todo'>
-                    <form onSubmit={this.handleUpdate}>
+                    <form className='Todo-edit-form' onSubmit={this.handleUpdate}>
                         <input 
                             type='text' 
                             name='task' 
@@ -63,12 +63,16 @@ class Todo extends React.Component {
                         className={this.props.completed ? 'Todo-task completed' : 'Todo-task'}
                         onClick={this.handleToggle}
                     >
-                        {this.props.task} 
-                        <button onClick={this.toggleForm}>Edit</button>
-                        <button 
-                            onClick={this.handleRemove}>X
+                        {this.props.task}
+                    </li> 
+                    <div className='Todo-buttons'>
+                        <button onClick={this.toggleForm}>
+                            <i class='fas fa-pen' />
                         </button>
-                    </li>
+                        <button onClick={this.handleRemove}>
+                            <i class='fas fa-trash' />
+                        </button>
+                    </div>
                 </div>
             )
         }
