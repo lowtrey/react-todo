@@ -1,6 +1,7 @@
 import React from 'react';
 import NewTodoForm from './NewTodoForm';
 import Todo from './Todo';
+import './TodoList.css';
 
 // TodoList - this component should render the NewTodoForm 
 // component and should render the list of Todo components. 
@@ -62,8 +63,10 @@ class TodoList extends React.Component {
             />
         ));
         return (
-            <div>
-                <h2>Todo List</h2>
+            <div className='TodoList'>
+                <h1>
+                    Todo List! <span>A Simple React Todo List App.</span>
+                </h1>
                 <ul>{todos}</ul>
                 <NewTodoForm addTask={this.addTask} />
             </div>

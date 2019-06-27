@@ -44,7 +44,7 @@ class Todo extends React.Component {
         let result;
         if(this.state.isEditing){
             result = (
-                <div>
+                <div className='Todo'>
                     <form onSubmit={this.handleUpdate}>
                         <input 
                             type='text' 
@@ -58,9 +58,9 @@ class Todo extends React.Component {
             )
         } else {
             result = (
-                <div>
+                <div className='Todo'>
                     <li 
-                        className={this.props.completed ? 'completed' : ''}
+                        className={this.props.completed ? 'Todo-task completed' : 'Todo-task'}
                         onClick={this.handleToggle}
                     >
                         {this.props.task} 
