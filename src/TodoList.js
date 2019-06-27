@@ -13,9 +13,7 @@ class TodoList extends React.Component {
         super(props);
         this.state = {todos: [
             {task: 'Wake Up', id: 1},
-            {task: 'Eat Sustinence', id: 2},
-            {task: 'Do Shit', id: 3},
-            {task: 'Go to Sleep', id: 4}
+            {task: 'Go to Sleep', id: 2}
         ]};
         this.addTask = this.addTask.bind(this);
         this.remove = this.remove.bind(this);
@@ -65,7 +63,7 @@ class TodoList extends React.Component {
         return (
             <div className='TodoList'>
                 <h1>
-                    Todo List! <span>A Simple React Todo List App.</span>
+                    Todos! <span>-A Simple React Todo List App-</span>
                 </h1>
                 <ul>{todos}</ul>
                 <NewTodoForm addTask={this.addTask} />

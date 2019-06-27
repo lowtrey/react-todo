@@ -3,11 +3,13 @@
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .NewTodoForm label {
 	min-width: 100%;
 	margin-bottom: 0.5rem;
 	font-size: 1.3rem;
 }
+
 .NewTodoForm input {
 	flex-grow: 1;
 	border: none;
@@ -15,6 +17,7 @@
 	padding: 0 1.5em;
 	font-size: initial;
 }
+
 .NewTodoForm button {
 	padding: 0 1.3rem;
 	border: none;
@@ -27,9 +30,11 @@
 	cursor: pointer;
 	transition: background 0.2s ease-out;
 }
+
 .NewTodoForm button:hover {
 	background:#FF5E5E;
 }
+
 .NewTodoForm input, 
 .NewTodoForm button {
 	font-family: 'Quicksand', sans-serif;
